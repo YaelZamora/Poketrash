@@ -17,9 +17,13 @@ struct RecompensasView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Rectangle()
-                    .ignoresSafeArea()
-                    .frame(width: 600, height: 200).position(x: 200).foregroundColor(Color("VerdeD"))
+                VStack {
+                    Rectangle()
+                        .ignoresSafeArea()
+                        .frame(width: UIScreen.screenWidth, height: 200)
+                        .foregroundColor(Color("VerdeD"))
+                    Spacer()
+                }
                 ScrollView {
                     HStack {
                         Circle()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0C67062BA7FE1B0034A25A /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */; };
 		AB799F052B1E6261004841BC /* baseProyectoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799F042B1E6261004841BC /* baseProyectoApp.swift */; };
 		AB799F092B1E6272004841BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB799F082B1E6272004841BC /* Assets.xcassets */; };
 		AB799F0C2B1E6272004841BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB799F0B2B1E6272004841BC /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		AB799F012B1E6261004841BC /* baseProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baseProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB799F042B1E6261004841BC /* baseProyectoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseProyectoApp.swift; sourceTree = "<group>"; };
 		AB799F082B1E6272004841BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				BEC848C62B1FA5940026E4EB /* UnderlineView.swift */,
 				BED157992B20EED5004E4663 /* CirculoView.swift */,
+				7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				AB799F052B1E6261004841BC /* baseProyectoApp.swift in Sources */,
 				BEC848C42B1F9C430026E4EB /* IntroView.swift in Sources */,
 				BE77BE3F2B20CAFA008CE3B9 /* ContentView.swift in Sources */,
+				7E0C67062BA7FE1B0034A25A /* ScreenSize.swift in Sources */,
 				BEC848C92B1FA6310026E4EB /* LoginView.swift in Sources */,
 				BE38CB2E2B210E67005BD8D9 /* UserView.swift in Sources */,
 				BED1579E2B210854004E4663 /* RecompensasView.swift in Sources */,

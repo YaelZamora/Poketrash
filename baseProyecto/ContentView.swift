@@ -42,7 +42,7 @@ struct ContentView: View {
                             .shadow(radius: 10)
                             .font(.largeTitle)
                             .foregroundColor(.black)
-                    }.frame(width: 90, height: 90).position(x: 195, y: 25)
+                    }.frame(width: 90, height: 90).position(x: UIScreen.screenWidth / 2, y: 25)
                 }.frame(height: 100)
             }
         }.navigationBarBackButtonHidden()

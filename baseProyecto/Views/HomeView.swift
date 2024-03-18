@@ -19,9 +19,13 @@ struct HomeView: View
         {
             ZStack 
             {
-                Rectangle()
-                    .ignoresSafeArea()
-                    .frame(width: 600, height: 200).position(x: 200).foregroundColor(Color("VerdeD"))
+                VStack {
+                    Rectangle()
+                        .ignoresSafeArea()
+                        .frame(width: UIScreen.screenWidth, height: 200)
+                        .foregroundColor(Color("VerdeD"))
+                    Spacer()
+                }
                 ScrollView
                 {
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -116,7 +120,7 @@ struct HomeView: View
                                     startPoint: .leading,
                                     endPoint: .bottom)
                             )
-                            .frame(width: 400, height: 150)
+                            .frame(width: UIScreen.screenWidth, height: 150)
                         HStack
                         {
                             
@@ -290,7 +294,7 @@ struct HomeView: View
                                 .frame(width: 40)
                         }
                     }
-            }.navigationBarBackButtonHidden()
+                }.navigationBarBackButtonHidden()
             }
         }
     }
