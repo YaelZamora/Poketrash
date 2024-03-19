@@ -36,8 +36,8 @@ struct LocationView: View {
                 }
                 VStack {
                     HStack {
-                        TextField("Buscar", text: $buscar)
-                        Image(systemName: "magnifyingglass")
+                        TextField("", text: $buscar, prompt: Text("Buscar...").foregroundColor(.gray))
+                        Image(systemName: "magnifyingglass").foregroundColor(.black)
                     }.padding().background(.white).cornerRadius(10).padding(.horizontal, 20).padding(.top, 16)
                     Spacer()
                 }

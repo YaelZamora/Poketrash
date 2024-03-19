@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E0C67062BA7FE1B0034A25A /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */; };
+		7EEC9EAD2BA9F7D80033199D /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */; };
 		AB799F052B1E6261004841BC /* baseProyectoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799F042B1E6261004841BC /* baseProyectoApp.swift */; };
 		AB799F092B1E6272004841BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB799F082B1E6272004841BC /* Assets.xcassets */; };
 		AB799F0C2B1E6272004841BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB799F0B2B1E6272004841BC /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		AB799F012B1E6261004841BC /* baseProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baseProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB799F042B1E6261004841BC /* baseProyectoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseProyectoApp.swift; sourceTree = "<group>"; };
 		AB799F082B1E6272004841BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				BEC848C62B1FA5940026E4EB /* UnderlineView.swift */,
 				BED157992B20EED5004E4663 /* CirculoView.swift */,
 				7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */,
+				7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				BED1579C2B20F388004E4663 /* LocationView.swift in Sources */,
 				BED1579A2B20EED5004E4663 /* CirculoView.swift in Sources */,
 				BEC848C72B1FA5940026E4EB /* UnderlineView.swift in Sources */,
+				7EEC9EAD2BA9F7D80033199D /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"baseProyecto/Preview Content\"";
+				DEVELOPMENT_TEAM = VP5MJD3LR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Poketrash;
@@ -522,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"baseProyecto/Preview Content\"";
+				DEVELOPMENT_TEAM = VP5MJD3LR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Poketrash;

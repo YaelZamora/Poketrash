@@ -26,8 +26,7 @@ struct RecompensasView: View {
                 }
                 ScrollView {
                     HStack {
-                        Circle()
-                            .frame(width: 60)
+                        Image("imagen-perfil").resizable().frame(width: 60, height: 60)
                         VStack(alignment: .leading) {
                             Text("Hola Isaac").font(.title2).bold()
                             Text("156 puntos")
@@ -40,6 +39,7 @@ struct RecompensasView: View {
                     .padding(.top, 20)
                     .frame(width: 350, height: 200)
                     .shadow(color: .gray, radius: 10)
+                    .foregroundColor(.black)
                     
                     Text("Resumen semanal").font(.title).bold().padding(.leading, -90)
                     HStack {
@@ -59,7 +59,7 @@ struct RecompensasView: View {
                             Text("Metal/Plasticos")
                                 .foregroundColor(Color("Rojo"))
                                 .fontWeight(.bold)
-                        }.padding(.trailing, 30)
+                        }.padding(.trailing, 30).foregroundColor(.black)
                         VStack(alignment: .center)
                         {
                             ZStack
@@ -84,7 +84,7 @@ struct RecompensasView: View {
                     Button {
                         //
                     } label: {
-                        Text("Canjear puntos").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.black).overlay(
+                        Text("Canjear puntos").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.primary).overlay(
                             RoundedRectangle(cornerRadius: 10).stroke(.gray, lineWidth: 1)
                         )
                     }.padding()
@@ -112,6 +112,7 @@ struct RecompensasView: View {
                             }
                         }.frame(width: 340, height: 120)
                             .background(.white)
+                            .foregroundColor(.black)
                             .cornerRadius(10)
                             .padding(.top, 20)
                             .frame(width: 350, height: 150)
@@ -119,10 +120,13 @@ struct RecompensasView: View {
                             .overlay(
                                 HStack {
                                     Image("icono-Mapa").resizable().frame(width: 20, height: 20)
-                                    Text("100").bold()
+                                    Text("100").bold().foregroundColor(.black)
                                 }.position(x:300, y: 130)
                             )
                     }
+                    VStack {
+                        //
+                    }.padding(.bottom, 150)
                 }.padding(.top, 20)
             }.toolbar {
                 ToolbarItemGroup(placement: .automatic) {

@@ -55,14 +55,14 @@ struct UserView: View {
                         Button {
                             //
                         } label: {
-                            Text("Cerrar sesión").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.black).overlay(
+                            Text("Cerrar sesión").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.primary).overlay(
                                 RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1)
                             )
                         }
                         Button {
                             //
                         } label: {
-                            Text("Eliminar cuenta").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.black).overlay(
+                            Text("Eliminar cuenta").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.primary).overlay(
                                 RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1)
                             )
                         }

@@ -56,8 +56,7 @@ struct HomeView: View
                     }
                     HStack
                     {
-                        Circle()
-                            .frame(width: 60)
+                        Image("imagen-perfil").resizable().frame(width: 60, height: 60)
                         VStack(alignment: .leading)
                         {
                             Text("Hola Isaac")
@@ -142,7 +141,7 @@ struct HomeView: View
                                     .foregroundColor(Color("Rojo"))
                                     .fontWeight(.bold)
                             }
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal, 30).foregroundColor(.black)
                             VStack(alignment: .center)
                             {
                                 ZStack 

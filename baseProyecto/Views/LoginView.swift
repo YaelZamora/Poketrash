@@ -61,8 +61,9 @@ struct LoginView: View
                     HStack
                     {
                         Spacer()
-                        Image("icono-Apple")
+                        Image(systemName: "apple.logo")
                             .frame(width: 90, height: 50)
+                            .font(.system(size: 50))                            
                             .padding(.horizontal)
                         Image("icono-Facebook")
                             .frame(width: 90, height: 50)
@@ -77,7 +78,7 @@ struct LoginView: View
                     {
                         Text("¿No tienes cuenta?")
                             .font(.footnote)
-                            .foregroundColor(.black)
+                            .foregroundColor(.secondary)
                         NavigationLink {
                             LoginRegistro1View()
                         } label: {

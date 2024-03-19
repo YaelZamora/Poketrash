@@ -29,8 +29,8 @@ struct ContentView: View {
                         myTabButton(title: "Profile", tags: 3, icon: "icono_Recompensas")
                         myTabButton(title: "Lalala", tags: 4, icon: "icons_Perfil").padding(.trailing, 20)
                     }.frame(width: 350, height: 65).background(.green).cornerRadius(40)
-                    Button{
-                                            
+                    NavigationLink{
+                        CameraView()
                     } label: {
                         Image("escaneo-qr")
                             .renderingMode(.template)
