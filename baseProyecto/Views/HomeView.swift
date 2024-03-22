@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View 
-{
+struct HomeView: View {
     @State private var selectedButton = 0
     let imagenes = ["imagen-Novedades2", "imagen-Novedades3"]
     let textos = ["Protección de 6,5 millones de acres de tierra natal en Canada", "Reciclamos conchas de moluscos en Hong Kong para cultivar nuevos arrecifes de ostras"]

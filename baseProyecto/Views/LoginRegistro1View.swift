@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct LoginRegistro1View: View 
-{
+struct LoginRegistro1View: View {
     @State var username = ""
     @State var email = ""
     @State var confirmemail = ""

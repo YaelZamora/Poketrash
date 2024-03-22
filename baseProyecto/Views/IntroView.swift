@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct IntroView: View 
-{
+struct IntroView: View {
     @State var navIntro = false
     
     var body: some View {
