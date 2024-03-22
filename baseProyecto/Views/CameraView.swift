@@ -14,14 +14,21 @@ struct CameraView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                ARViewContainer().ignoresSafeArea()
+                ARViewContainer()
+                    .ignoresSafeArea()
                 VStack {
                     Spacer()
+                    
                     NavigationLink {
                         SelectPictureView()
                     } label: {
-                        Image(systemName: "camera.aperture").font(.system(size: 50)).padding().background(.gray).cornerRadius(80)
-                    }.padding(.bottom, 30)
+                        Image(systemName: "camera.aperture")
+                            .font(.system(size: 50))
+                            .padding()
+                            .background(.gray)
+                            .cornerRadius(80)
+                    }
+                    .padding(.bottom, 30)
                 }
             }
         }

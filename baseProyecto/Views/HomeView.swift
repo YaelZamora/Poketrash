@@ -13,12 +13,9 @@ struct HomeView: View
     let imagenes = ["imagen-Novedades2", "imagen-Novedades3"]
     let textos = ["Protección de 6,5 millones de acres de tierra natal en Canada", "Reciclamos conchas de moluscos en Hong Kong para cultivar nuevos arrecifes de ostras"]
     
-    var body: some View
-    {
-        NavigationStack 
-        {
-            ZStack 
-            {
+    var body: some View {
+        NavigationStack {
+            ZStack {
                 VStack {
                     Rectangle()
                         .ignoresSafeArea()
@@ -26,24 +23,26 @@ struct HomeView: View
                         .foregroundColor(Color("VerdeD"))
                     Spacer()
                 }
-                ScrollView
-                {
+                
+                ScrollView {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(0..<2) { item in
-                                VStack(alignment: .leading)
-                                {
-                                    Image("\(imagenes[item])").resizable().overlay(
-                                        VStack (alignment: .leading){
-                                            Spacer()
-                                            Text("\(textos[item])")
-                                                .font(.caption)
-                                                .foregroundColor(.white)
-                                                .bold()
-                                                .frame(width: 190)
-                                                .padding(.bottom, 10)
-                                        }
-                                    )
+                                VStack(alignment: .leading) {
+                                    Image("\(imagenes[item])")
+                                        .resizable()
+                                        .overlay(
+                                            VStack(alignment: .leading) {
+                                                Spacer()
+                                                
+                                                Text("\(textos[item])")
+                                                    .font(.caption)
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                                    .frame(width: 190)
+                                                    .padding(.bottom, 10)
+                                            }
+                                        )
                                 }
                                 .frame(width: 340, height: 150)
                                 .background(.white)
@@ -51,14 +50,15 @@ struct HomeView: View
                                 .padding(.top, 20)
                                 .frame(width: 350, height: 200)
                                 .shadow(color: .gray, radius: 10)
+                                
                             }
                         }.padding(.leading, 30)
                     }
-                    HStack
-                    {
-                        Image("imagen-perfil").resizable().frame(width: 60, height: 60)
-                        VStack(alignment: .leading)
-                        {
+                    HStack {
+                        Image("imagen-perfil")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                        VStack(alignment: .leading) {
                             Text("Hola Isaac")
                                 .font(.title2)
                                 .fontWeight(.bold)
@@ -69,8 +69,7 @@ struct HomeView: View
                         }
                         .padding(.horizontal, 15)
                     }
-                    HStack 
-                    {
+                    HStack {
                         Button {
                             selectedButton = 0
                         } label: {
@@ -83,6 +82,7 @@ struct HomeView: View
                                 .background((selectedButton == 0) ? Color("VerdeF") : .gray.opacity(0.5))
                                 .cornerRadius(30)
                         }
+                        
                         Button {
                             selectedButton = 1
                         } label: {
@@ -95,6 +95,7 @@ struct HomeView: View
                                 .background((selectedButton == 1) ? Color("VerdeF") : .gray.opacity(0.5))
                                 .cornerRadius(30)
                         }
+                        
                         Button {
                             selectedButton = 2
                         } label: {
@@ -110,8 +111,7 @@ struct HomeView: View
                     }
                     .padding(.vertical, 10)
                     
-                    ZStack()
-                    {
+                    ZStack() {
                         Rectangle()
                             .fill(
                                 LinearGradient(
@@ -120,11 +120,9 @@ struct HomeView: View
                                     endPoint: .bottom)
                             )
                             .frame(width: UIScreen.screenWidth, height: 150)
-                        HStack
-                        {
+                        HStack {
                             
-                            VStack(alignment: .leading)
-                            {
+                            VStack(alignment: .leading) {
                                 Text("Puntos obtenido en la última semana")
                                     .font(.caption)
                                 Text("89 puntos")
@@ -141,17 +139,19 @@ struct HomeView: View
                                     .foregroundColor(Color("Rojo"))
                                     .fontWeight(.bold)
                             }
-                            .padding(.horizontal, 30).foregroundColor(.black)
-                            VStack(alignment: .center)
-                            {
-                                ZStack 
-                                {
+                            .padding(.horizontal, 30)
+                            .foregroundColor(.black)
+                            
+                            VStack(alignment: .center) {
+                                ZStack {
                                     CirculoView(slices: [(5, .red), (1.6, .clear)], data: [(5, .red)]).frame(width: 60, height: 60)
                                     Circle().frame(width: 40).foregroundColor(Color("VerdeD"))
                                 }
+                                
                                 Text("Nivel 1")
                                     .foregroundStyle(Color(.white))
                                     .fontWeight(.bold)
+                                
                                 Text("Eco Iniciador")
                                     .foregroundStyle(.white.opacity(0.8))
                                     .fontWeight(.bold)
@@ -159,8 +159,7 @@ struct HomeView: View
                             .padding(.trailing)
                         }
                     }
-                    HStack(alignment: .bottom)
-                    {
+                    HStack(alignment: .bottom) {
                         Text("Recicla y reutiliza")
                             .font(.title2)
                             .foregroundStyle(Color("VerdeF"))
@@ -169,95 +168,108 @@ struct HomeView: View
                     }
                     .padding(.top, 15)
                     
-                    VStack
-                    {
-                        HStack
-                        {
+                    VStack {
+                        HStack {
+                            
                             Spacer()
-                            ZStack
-                            {
+                            
+                            ZStack {
+                                
                                 RoundedRectangle(cornerRadius: 15)
-                                VStack
-                                {
+                                
+                                VStack {
                                     Text("Plásticos")
                                         .foregroundStyle(Color(.white))
                                         .fontWeight(.bold)
                                         .padding(.horizontal, 20)
+                                    
                                     Image("imagen-plastico")
                                         .resizable()
                                         .scaledToFit()
+                                    
                                     Spacer()
                                 }
                             }
                             .frame(width: 150, height: 110)
                             .foregroundStyle(Color("VerdeD"))
+                            
                             Spacer()
-                            ZStack
-                            {
+                            
+                            ZStack {
                                 RoundedRectangle(cornerRadius: 15)
-                                VStack
-                                {
+                                
+                                VStack {
                                     Text("Vidrio")
                                         .foregroundStyle(Color(.white))
                                         .fontWeight(.bold)
                                         .padding(.horizontal, 20)
+                                    
                                     Image("imagen-Vidrio")
                                         .resizable()
                                         .scaledToFit()
+                                    
                                     Spacer()
                                 }
                             }
                             .frame(width: 150, height: 110)
                             .foregroundStyle(Color("VerdeD"))
+                            
                             Spacer()
                         }
                         .padding(.bottom)
-                        HStack
-                        {
+                        HStack {
                             Spacer()
-                            ZStack
-                            {
+                            
+                            ZStack {
                                 RoundedRectangle(cornerRadius: 15)
-                                VStack
-                                {
+                                
+                                VStack {
                                     Text("Metal")
                                         .foregroundStyle(Color(.white))
                                         .fontWeight(.bold)
                                         .padding(.horizontal, 20)
+                                    
                                     Image("imagen-Lata")
                                         .resizable()
                                         .scaledToFit()
+                                    
                                     Spacer()
                                 }
                             }
                             .frame(width: 150, height: 110)
                             .foregroundStyle(Color("VerdeD"))
+                            
                             Spacer()
-                            ZStack
-                            {
+                            
+                            ZStack {
                                 RoundedRectangle(cornerRadius: 15)
-                                VStack
-                                {
+                                
+                                VStack {
                                     Text("Papel")
                                         .foregroundStyle(Color(.white))
                                         .fontWeight(.bold)
                                         .padding(.horizontal, 20)
+                                    
                                     Image("imagen-Papel")
                                         .resizable()
                                         .scaledToFit()
+                                    
                                     Spacer()
                                 }
                             }
                             .frame(width: 150, height: 110)
                             .foregroundStyle(Color("VerdeD"))
+                            
                             Spacer()
                         }
+                        
                         Text("Todas las categorias")
                             .font(.caption)
                             .foregroundStyle(Color("VerdeD"))
                             .fontWeight(.bold)
                             .padding(.top, 5)
                     }
+                    
                     Text("Noticias")
                         .font(.title2)
                         .fontWeight(.bold)

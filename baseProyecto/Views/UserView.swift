@@ -18,36 +18,59 @@ struct UserView: View {
                         .ignoresSafeArea()
                         .frame(width: UIScreen.screenWidth, height: 200)
                         .foregroundColor(Color("VerdeD"))
+                    
                     Spacer()
                 }
                 ScrollView {
-                    Image("imagen-perfil").resizable().frame(width: 180, height: 180).overlay(
-                        Button {
-                            //
-                        } label: {
-                            Image("icono-agregar").resizable().frame(width: 50, height: 50)
-                        }.position(x:140, y: 165)
-                    )
-                    Text("Isaac Rodríguez").font(.title2).bold()
-                    Text("Nivel 1").fontWeight(.light)
-                    Text("Eco Iniciador").fontWeight(.light)
+                    Image("imagen-perfil")
+                        .resizable()
+                        .frame(width: 180, height: 180)
+                        .overlay(
+                            Button {
+                                //
+                            } label: {
+                                Image("icono-agregar")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }.position(x:140, y: 165)
+                        )
+                    
+                    Text("Isaac Rodríguez")
+                        .font(.title2)
+                        .bold()
+                    
+                    Text("Nivel 1")
+                        .fontWeight(.light)
+                    
+                    Text("Eco Iniciador")
+                        .fontWeight(.light)
                     
                     VStack(alignment: .leading) {
                         Text("Email").padding(.top, 10)
+                        
                         HStack {
-                            TextField("isaac.081150@gmail.com", text: $email).underlineTextField()
+                            TextField("isaac.081150@gmail.com", text: $email)
+                                .underlineTextField()
                             Image(systemName: "pencil")
                         }
-                    }.padding(.horizontal)
+                    }
+                    .padding(.horizontal)
                     
                     VStack(alignment: .leading) {
                         Text("Preguntas frecuentes")
+                        
                         Divider()
+                        
                         Text("Acerca de PokeTrash")
+                        
                         Divider()
+                        
                         Text("Aclaraciones")
+                        
                         Divider()
+                        
                         Text("Contacto")
+                        
                         Divider()
                     }.padding()
                     
@@ -55,18 +78,32 @@ struct UserView: View {
                         Button {
                             //
                         } label: {
-                            Text("Cerrar sesión").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.primary).overlay(
-                                RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1)
-                            )
+                            Text("Cerrar sesión")
+                                .font(.caption)
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                                .foregroundColor(.primary)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(.gray, lineWidth: 1)
+                                )
                         }
+                        
                         Button {
                             //
                         } label: {
-                            Text("Eliminar cuenta").font(.caption).padding(.horizontal).padding(.vertical, 8).foregroundColor(.primary).overlay(
-                                RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 1)
-                            )
+                            Text("Eliminar cuenta")
+                                .font(.caption)
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                                .foregroundColor(.primary)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(.gray, lineWidth: 1)
+                                )
                         }
-                    }.padding(.top, 20)
+                    }
+                    .padding(.top, 20)
                 }
             }.toolbar {
                 ToolbarItemGroup(placement: .automatic) {

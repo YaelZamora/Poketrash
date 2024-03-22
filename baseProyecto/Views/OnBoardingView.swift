@@ -17,9 +17,16 @@ struct OnBoardingView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Image((indexSelected == 1) ? "\(imagenes[0])" : (indexSelected == 2) ? "\(imagenes[1])" : "\(imagenes[2])").resizable().frame(width: 300, height: 250)
-                Text((indexSelected == 1) ? "\(titulo[0])" : (indexSelected == 2) ? "\(titulo[1])" : "\(titulo[2])").font(.largeTitle).bold()
+                Image((indexSelected == 1) ? "\(imagenes[0])" : (indexSelected == 2) ? "\(imagenes[1])" : "\(imagenes[2])")
+                    .resizable()
+                    .frame(width: 300, height: 250)
+                
+                Text((indexSelected == 1) ? "\(titulo[0])" : (indexSelected == 2) ? "\(titulo[1])" : "\(titulo[2])")
+                    .font(.largeTitle)
+                    .bold()
+                
                 Text((indexSelected == 1) ? "\(informacion[0])" : (indexSelected == 2) ? "\(informacion[1])" : "\(informacion[2])")
+                
                 HStack {
                     if indexSelected == 1 {
                         ZStack{ }.frame(width: 30, height: 10).background(.green).cornerRadius(5)
@@ -37,19 +44,25 @@ struct OnBoardingView: View {
                         Circle().frame(width: 10).foregroundColor(.gray)
                     }
                 }.padding(.bottom, 110)
+                
                 HStack {
                     NavigationLink {
                         ContentView()
                     } label: {
                         Text("Skip")
                     }
+                    
                     Spacer()
+                    
                     ZStack {
                         if showNavigation {
                             NavigationLink {
                                 ContentView()
                             } label: {
-                                Image(systemName: "house").frame(width: 50, height: 50).background(.gray.opacity(0.4)).cornerRadius(25)
+                                Image(systemName: "house")
+                                    .frame(width: 50, height: 50)
+                                    .background(.gray.opacity(0.4))
+                                    .cornerRadius(25)
                             }
                         } else {
                             Button {
@@ -61,11 +74,15 @@ struct OnBoardingView: View {
                                     showNavigation.toggle()
                                 }
                             } label: {
-                                Image(systemName: "chevron.right").frame(width: 50, height: 50).background(.gray.opacity(0.4)).cornerRadius(25)
+                                Image(systemName: "chevron.right")
+                                    .frame(width: 50, height: 50)
+                                    .background(.gray.opacity(0.4))
+                                    .cornerRadius(25)
                             }
                         }
                     }
-                }.padding(.horizontal, 40).padding(.top, 40)
+                }.padding(.horizontal, 40)
+                    .padding(.top, 40)
             }
         }
     }

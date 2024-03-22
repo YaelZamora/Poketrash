@@ -13,16 +13,15 @@ struct LoginRegistro1View: View
     @State var email = ""
     @State var confirmemail = ""
     
-    var body: some View
-    {
-        NavigationStack
-        {
-            ZStack
-            {
-                VStack
-                {
-                    HStack
-                    {
+    var body: some View {
+        
+        NavigationStack {
+        
+            ZStack {
+            
+                VStack {
+                    
+                    HStack {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 150, height: 5)
                             .foregroundColor(Color("VerdeD"))
@@ -31,19 +30,23 @@ struct LoginRegistro1View: View
                             .foregroundColor(.gray.opacity(0.5))
                     }
                     .padding(.top, 20)
+                    
                     TextField("Nombre de usuario", text: $username)
                         .foregroundColor(.black)
                         .frame(width: 300)
                         .underlineTextField()
                         .padding(.top, 80)
+                    
                     TextField("Email", text: $email)
                         .foregroundColor(.black)
                         .frame(width: 300)
                         .underlineTextField()
+                    
                     TextField("Confirma tu email", text: $confirmemail)
                         .foregroundColor(.black)
                         .frame(width: 300)
                         .underlineTextField()
+                    
                     NavigationLink {
                         LoginRegistro2View()
                     } label: {
@@ -55,6 +58,7 @@ struct LoginRegistro1View: View
                             .cornerRadius(15)
                             .padding(.top, 100)
                     }
+                    
                     Spacer()
                 }
             }

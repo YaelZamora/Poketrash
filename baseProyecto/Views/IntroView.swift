@@ -11,18 +11,12 @@ struct IntroView: View
 {
     @State var navIntro = false
     
-    var body: some View
-    {
-        ZStack
-        {
-            if navIntro
-            {
+    var body: some View {
+        ZStack {
+            if navIntro {
                 LoginView()
-            }
-            else
-            {
-                VStack 
-                {
+            } else {
+                VStack {
                     Image("logo-Poke")
                         .resizable()
                         .scaledToFit()
@@ -30,7 +24,7 @@ struct IntroView: View
                 }
             }
         }
-        .onAppear{
+        .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5){
                 withAnimation{
                     navIntro = true

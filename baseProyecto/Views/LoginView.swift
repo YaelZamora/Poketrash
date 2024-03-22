@@ -7,32 +7,33 @@
 
 import SwiftUI
 
-struct LoginView: View 
-{
+struct LoginView: View {
     @State var email = ""
     @State var password = ""
     
-    var body: some View
-    {
-        NavigationStack
-        {
-            ZStack
-            {
-                VStack
-                {
+    var body: some View {
+        
+        NavigationStack {
+            
+            ZStack {
+                
+                VStack {
                     Image("logo-Poke")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 180)
+                    
                     TextField("Email", text: $email)
                         .foregroundColor(.black)
                         .frame(width: 300)
                         .underlineTextField()
                         .padding(.vertical)
+                    
                     TextField("Contraseña", text: $password)
                         .foregroundColor(.black)
                         .frame(width: 300)
                         .underlineTextField()
+                    
                     NavigationLink {
                         //
                     } label: {
@@ -41,8 +42,9 @@ struct LoginView: View
                             .foregroundColor(Color("VerdeD"))
                             .padding(.leading, 180)
                     }
-
+                    
                     Spacer()
+                    
                     NavigationLink {
                         ContentView()
                     } label: {
@@ -54,31 +56,39 @@ struct LoginView: View
                             .cornerRadius(15)
                             .padding()
                     }
+                    
                     Spacer()
+                    
                     Text("Continua con")
                         .font(.callout)
                         .padding(.bottom)
-                    HStack
-                    {
+                    
+                    HStack {
                         Spacer()
+                        
                         Image(systemName: "apple.logo")
                             .frame(width: 90, height: 50)
                             .font(.system(size: 50))                            
                             .padding(.horizontal)
+                        
                         Image("icono-Facebook")
                             .frame(width: 90, height: 50)
                             .padding(.horizontal)
+                        
                         Image("icono-Google")
                             .frame(width: 90, height: 50)
                             .padding(.horizontal)
+                        
                         Spacer()
                     }
+                    
                     Spacer()
-                    HStack
-                    {
+                    
+                    HStack {
                         Text("¿No tienes cuenta?")
                             .font(.footnote)
                             .foregroundColor(.secondary)
+                        
                         NavigationLink {
                             LoginRegistro1View()
                         } label: {
@@ -86,12 +96,8 @@ struct LoginView: View
                                 .font(.footnote)
                                 .foregroundColor(Color("VerdeD"))
                         }
-
-                    }
-                    
-
                         
-                    
+                    }
                 }
             }
         }
