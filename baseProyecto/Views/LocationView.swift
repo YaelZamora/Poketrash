@@ -17,7 +17,16 @@ struct Location: Identifiable {
 struct LocationView: View {
     @State var buscar = ""
     @State var selectedButton = 0
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 19.48344215, longitude: -99.2458080208569), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    @State private var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 19.48344215,
+            longitude: -99.2458080208569
+        ),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+        )
+    )
     
     let locations = [
         Location(name: "Location", coordinate: CLLocationCoordinate2D(latitude: 19.48344215, longitude: -99.2458080208569)),
@@ -104,6 +113,29 @@ struct LocationView: View {
                         
                         Spacer()
                         
+                        HStack {
+                            Spacer()
+                            
+                            Button {
+                                mapRegion = MKCoordinateRegion(
+                                    center: CLLocationCoordinate2D(
+                                        latitude: 19.48344215,
+                                        longitude: -99.2458080208569
+                                    ),
+                                    span: MKCoordinateSpan(
+                                        latitudeDelta: 0.01,
+                                        longitudeDelta: 0.01
+                                    )
+                                )
+                            } label: {
+                                Image(systemName: "location.circle")
+                            }
+                            .font(.largeTitle)
+                            .padding()
+                            .background()
+                            .cornerRadius(20)
+                        }.padding()
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(0..<3) { _ in
@@ -124,7 +156,16 @@ struct LocationView: View {
                                                 .resizable()
                                                 .frame(width: 40, height: 40)
                                             Button {
-                                                //
+                                                mapRegion = MKCoordinateRegion(
+                                                    center: CLLocationCoordinate2D(
+                                                        latitude: 19.506694,
+                                                        longitude: -99.199885
+                                                    ),
+                                                    span: MKCoordinateSpan(
+                                                        latitudeDelta: 0.01,
+                                                        longitudeDelta: 0.01
+                                                    )
+                                                )
                                             } label: {
                                                 Text("Ver en el mapa")
                                                     .font(.caption)
