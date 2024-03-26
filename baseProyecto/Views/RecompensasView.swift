@@ -5,6 +5,7 @@
 //  Created by CEDAM16 on 05/12/23.
 //
 
+import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct RecompensasView: View {
@@ -14,16 +15,21 @@ struct RecompensasView: View {
     let recompensa = ["10% de descuento para tu próxima compra en 'El Cuais'", "10% de descuento para tu próxima compra en la libreria", "Segundo alimento al 50% de descuento en cualquier cafetería"]
     let lugarRecompensa = ["El Cuais", "Libreria", "Cafetería"]
     
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
+    @State private var showCode = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
-                VStack {
-                    Rectangle()
-                        .ignoresSafeArea()
-                        .frame(width: UIScreen.screenWidth, height: 200)
-                        .foregroundColor(Color("VerdeD"))
-                    Spacer()
-                }
+                    
+                    VStack {
+                        Rectangle()
+                            .ignoresSafeArea()
+                            .frame(width: UIScreen.screenWidth, height: 200)
+                            .foregroundColor(Color("VerdeD"))
+                        Spacer()
+                    }
                 ScrollView {
                     HStack {
                         Image("imagen-perfil")
@@ -32,7 +38,7 @@ struct RecompensasView: View {
                         
                         VStack(alignment: .leading) {
                             Text("Hola Isaac").font(.title2).bold()
-                        
+                            
                             Text("156 puntos")
                             
                             Text("Junta más puntos y obten más recompensas")
@@ -137,9 +143,9 @@ struct RecompensasView: View {
                             .padding(.vertical, 8)
                             .foregroundColor(.primary)
                             .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.gray, lineWidth: 1)
-                        )
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(.gray, lineWidth: 1)
+                            )
                     }.padding()
                     
                     Divider()
@@ -175,7 +181,7 @@ struct RecompensasView: View {
                         .padding(.top, 10)
                     
                     ForEach(0..<recompensa.count) { item in
-                        HStack {
+                        HStack {//
                             Rectangle()
                                 .frame(width: 100, height: 80)
                                 .foregroundColor(.gray)
@@ -209,11 +215,27 @@ struct RecompensasView: View {
                                     
                                 }.position(x:300, y: 130)
                             )
+                            .onTapGesture {
+                                showCode.toggle()
+                            }
                     }
                     VStack {
                         //
                     }.padding(.bottom, 150)
                 }.padding(.top, 20)
+                
+                if showCode {
+                    Color.black.opacity(0.8).ignoresSafeArea()
+                    Image(uiImage: generateQRCode(from: "10% de descuento"))
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .onTapGesture {
+                            showCode.toggle()
+                        }
+                }
+                
             }.toolbar {
                 ToolbarItemGroup(placement: .automatic) {
                     Button {
@@ -242,6 +264,18 @@ struct RecompensasView: View {
                 }
             }.navigationBarBackButtonHidden()
         }
+    }
+    
+    func generateQRCode(from string: String) -> UIImage {
+        filter.message = Data(string.utf8)
+        
+        if let outputImage = filter.outputImage {
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                return UIImage(cgImage: cgImage)
+            }
+        }
+        
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
 }
 
