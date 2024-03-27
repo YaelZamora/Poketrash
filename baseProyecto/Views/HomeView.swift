@@ -10,7 +10,10 @@ import SwiftUI
 struct HomeView: View {
     @State private var selectedButton = 0
     let imagenes = ["imagen-Novedades2", "imagen-Novedades3"]
-    let textos = ["Protección de 6,5 millones de acres de tierra natal en Canada", "Reciclamos conchas de moluscos en Hong Kong para cultivar nuevos arrecifes de ostras"]
+    let textos = [
+        "Protección de 6,5 millones de acres de tierra natal en Canada",
+        "Reciclamos conchas de moluscos en Hong Kong para cultivar nuevos arrecifes de ostras"
+    ]
     
     var body: some View {
         NavigationStack {
@@ -271,13 +274,13 @@ struct HomeView: View {
                             .foregroundStyle(Color("VerdeD"))
                             .fontWeight(.bold)
                             .padding(.top, 5)
+                        
+                        Text("Noticias")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color("VerdeF"))
+                            .padding()
                     }
-                    
-                    Text("Noticias")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color("VerdeF"))
-                        .padding()
                     
                     Spacer()
                 }
