@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E0C67062BA7FE1B0034A25A /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */; };
+		7E916A8D2BB4A448003B86B8 /* TutorialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E916A8C2BB4A448003B86B8 /* TutorialsView.swift */; };
+		7EC069192BB4A14F00C56255 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC069182BB4A14F00C56255 /* YouTubeVideo.swift */; };
 		7EEC9EAD2BA9F7D80033199D /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */; };
 		AB799F052B1E6261004841BC /* baseProyectoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799F042B1E6261004841BC /* baseProyectoApp.swift */; };
 		AB799F092B1E6272004841BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB799F082B1E6272004841BC /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		7E916A8C2BB4A448003B86B8 /* TutorialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsView.swift; sourceTree = "<group>"; };
+		7EC069182BB4A14F00C56255 /* YouTubeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
 		7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		AB799F012B1E6261004841BC /* baseProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baseProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB799F042B1E6261004841BC /* baseProyectoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseProyectoApp.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				BE77BE462B20E0B8008CE3B9 /* SelectPictureView.swift */,
 				BED1579B2B20F388004E4663 /* LocationView.swift */,
 				BE38CB2D2B210E67005BD8D9 /* UserView.swift */,
+				7E916A8C2BB4A448003B86B8 /* TutorialsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				BED157992B20EED5004E4663 /* CirculoView.swift */,
 				7E0C67052BA7FE1B0034A25A /* ScreenSize.swift */,
 				7EEC9EAC2BA9F7D80033199D /* Placeholder.swift */,
+				7EC069182BB4A14F00C56255 /* YouTubeVideo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,7 +338,9 @@
 				BE77BE412B20DD56008CE3B9 /* LoginRegistro1View.swift in Sources */,
 				BE77BE432B20DD68008CE3B9 /* LoginRegistro2View.swift in Sources */,
 				BED1579C2B20F388004E4663 /* LocationView.swift in Sources */,
+				7E916A8D2BB4A448003B86B8 /* TutorialsView.swift in Sources */,
 				BED1579A2B20EED5004E4663 /* CirculoView.swift in Sources */,
+				7EC069192BB4A14F00C56255 /* YouTubeVideo.swift in Sources */,
 				BEC848C72B1FA5940026E4EB /* UnderlineView.swift in Sources */,
 				7EEC9EAD2BA9F7D80033199D /* Placeholder.swift in Sources */,
 			);

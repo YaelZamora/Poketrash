@@ -172,25 +172,29 @@ struct HomeView: View {
                             
                             Spacer()
                             
-                            ZStack {
-                                
-                                RoundedRectangle(cornerRadius: 15)
-                                
-                                VStack {
-                                    Text("Plásticos")
-                                        .foregroundStyle(Color(.white))
-                                        .fontWeight(.bold)
-                                        .padding(.horizontal, 20)
+                            NavigationLink {
+                                TutorialsView()
+                            } label: {
+                                ZStack {
                                     
-                                    Image("imagen-plastico")
-                                        .resizable()
-                                        .scaledToFit()
+                                    RoundedRectangle(cornerRadius: 15)
                                     
-                                    Spacer()
+                                    VStack {
+                                        Text("Plásticos")
+                                            .foregroundStyle(Color(.white))
+                                            .fontWeight(.bold)
+                                            .padding(.horizontal, 20)
+                                        
+                                        Image("imagen-plastico")
+                                            .resizable()
+                                            .scaledToFit()
+                                        
+                                        Spacer()
+                                    }
                                 }
+                                .frame(width: 150, height: 110)
+                                .foregroundStyle(Color("VerdeD"))
                             }
-                            .frame(width: 150, height: 110)
-                            .foregroundStyle(Color("VerdeD"))
                             
                             Spacer()
                             
