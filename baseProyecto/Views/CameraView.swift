@@ -6,46 +6,64 @@
 //
 
 import SwiftUI
-import RealityKit
-import ARKit
-import AVFoundation
+import PhotosUI
 
 struct CameraView: View {
+    @State private var showCamera = false
+    @State private var selectedImage: UIImage?
+    @State var image: UIImage?
+    
     var body: some View {
-        NavigationStack {
-            ZStack {
-                ARViewContainer()
-                    .ignoresSafeArea()
-                VStack {
-                    Spacer()
-                    
-                    NavigationLink {
-                        SelectPictureView()
-                    } label: {
-                        Image(systemName: "camera.aperture")
-                            .font(.system(size: 50))
-                            .padding()
-                            .background(.gray)
-                            .cornerRadius(80)
-                    }
-                    .padding(.bottom, 30)
-                }
+        VStack {
+            if let selectedImage{
+                Image(uiImage: selectedImage)
+                    .resizable()
+                    .scaledToFit()
+            }
+            
+            Button("Open camera") {
+                self.showCamera.toggle()
+            }
+            .fullScreenCover(isPresented: self.$showCamera) {
+                accessCameraView(selectedImage: self.$selectedImage)
             }
         }
     }
 }
 
-struct ARViewContainer: UIViewRepresentable {
+struct accessCameraView: UIViewControllerRepresentable {
     
-    func makeUIView(context: Context) -> some ARView {
-        let arView = ARView(frame: .zero)
-        arView.cameraMode = .ar
-        
-        return arView
+    @Binding var selectedImage: UIImage?
+    @Environment(\.presentationMode) var isPresented
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = context.coordinator
+        return imagePicker
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        //
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+        
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(picker: self)
+    }
+}
+
+class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    var picker: accessCameraView
+    
+    init(picker: accessCameraView) {
+        self.picker = picker
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        self.picker.selectedImage = selectedImage
+        self.picker.isPresented.wrappedValue.dismiss()
     }
 }
 
